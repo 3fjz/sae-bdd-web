@@ -1,0 +1,236 @@
+/*DES ÉLÉMENTS ONT ÉTÉ REPRIS DU SITE UIVERSE.IO (ÉLÉMENTS CSS + HTML DÉJÀ CRÉÉS*/
+
+
+:root {
+  --primary-color: #1a365d;
+  --primary-dark: #0f2647;
+  --secondary-color: #2c5282;
+  --accent-color: #3182ce;
+  --text-dark: #2d3748;
+  --text-light: #718096;
+  --bg-light: #f7fafc;
+  --bg-white: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary-dark);
+}
+
+h1, h3, p {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a, .carte-requete {
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  background: var(--bg-white);
+  box-shadow: var(--shadow);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nom-sae {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.menu-sae {
+  display: flex;
+  gap: 2rem;
+}
+
+.menu-sae a {
+  padding: 0.5rem 0;
+  font-weight: 500;
+}
+
+.menu-sae a:hover {
+  color: var(--accent-color);
+}
+
+main {
+  margin-top: 80px;
+  min-height: calc(100vh - 200px);
+}
+
+nav, .contenu-bdd {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contenu-presentation, .description-projet {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-bdd {
+  padding: 8rem 2rem;
+}
+
+.titre-section-bdd {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.actions-accueil {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-requete {
+  padding: 0.875rem 2rem;
+  background: var(--primary-color);
+  color: var(--bg-white);
+  border-radius: 6px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.btn-requete:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+
+.carte-requete, .description-projet {
+  background: var(--bg-white);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.description-projet {
+  padding: 3rem;
+  line-height: 1.8;
+}
+
+/* min() évite qu'une colonne de 350px déborde sur les petits écrans. */
+.grille-requetes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+  gap: 2rem;
+}
+
+.carte-requete {
+  padding: 2rem;
+}
+
+.carte-requete:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.carte-requete h3 {
+  color: var(--primary-color);
+}
+
+.code-sql {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--primary-dark);
+  color: var(--bg-light);
+  border-radius: 6px;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+
+.carte-requete p {
+  margin-bottom: 1.5rem;
+}
+
+footer {
+  margin-top: 4rem;
+  padding: 2rem;
+  background: var(--primary-dark);
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+@media (max-width: 760px) {
+  .menu-sae {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.75rem 1rem;
+  }
+
+  .actions-accueil {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-bdd {
+    padding: 5rem 1rem;
+  }
+
+  .contenu-bdd {
+    padding: 0 1rem;
+  }
+}
